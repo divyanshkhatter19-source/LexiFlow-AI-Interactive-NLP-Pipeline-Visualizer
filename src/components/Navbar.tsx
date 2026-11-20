@@ -4,8 +4,9 @@ import { Book, Info, Cpu } from "lucide-react";
 
 const Navbar: React.FC = () => {
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-[#0b0d1a]/90 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50">
-      <div className="flex items-center space-x-3">
+    <header className="flex items-center justify-between px-6 py-4 bg-[#0b0d1a]/90 backdrop-blur-sm border-b border-white/10 sticky top-0 z-50 gap-4">
+      {/* Left — branding */}
+      <div className="flex items-center space-x-3 shrink-0">
         <Cpu className="w-6 h-6 text-cyan-400 shrink-0" />
         <div className="flex flex-col leading-tight">
           <h1 className="text-2xl font-bold text-white tracking-tight">
@@ -16,7 +17,14 @@ const Navbar: React.FC = () => {
           </span>
         </div>
       </div>
-      <nav className="flex space-x-6 text-sm font-medium">
+
+      {/* Centre — tagline (hidden on small screens) */}
+      <p className="hidden md:block flex-1 text-center text-base font-light tracking-wide text-slate-400/70 italic truncate px-4">
+        An Interactive NLP Pipeline &amp; Vector Embedding Visualizer
+      </p>
+
+      {/* Right — navigation */}
+      <nav className="flex shrink-0 space-x-6 text-sm font-medium">
         <a href="#vocab" className="text-gray-300 hover:text-cyan-400 transition-colors flex items-center space-x-1">
           <span>Pipeline</span>
         </a>
